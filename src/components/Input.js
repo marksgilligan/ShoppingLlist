@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { usePersistentState } from "../libs/usePersistentState";
 
 //create an input field
 //create a button
@@ -19,7 +20,7 @@ import React, { useState } from "react";
 //-->App.js
 
 function Input({ addToList }) {
-  const [value, setValue] = useState();
+  const [value, setValue] = usePersistentState("", "input_state");
 
   function handleChange(eventObject) {
     const newValue = eventObject.target.value;

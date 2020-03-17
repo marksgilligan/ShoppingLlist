@@ -27,11 +27,7 @@ import { usePersistentState } from "./libs/usePersistentState";
 //Call ClearList function and hand down list, and setList as props
 
 function App() {
-  const [list, setList] = usePersistentState([
-    { name: "beans", completed: false },
-    { name: "carrots", completed: false },
-    { name: "choccy", completed: false }
-  ]);
+  const [list, setList] = usePersistentState("", "list");
 
   function toggleCompleted(i) {
     const listStart = list.slice(0, i);
